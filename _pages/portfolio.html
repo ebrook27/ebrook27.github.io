@@ -11,7 +11,8 @@ A selection of projects focused on applied machine learning, time-series modelli
 {% include base_path %}
 
 <div class="entries-list">
-  {% for post in site.portfolio %}
+{% assign sorted_portfolio = site.portfolio | sort: "order" %}
+{% for post in sorted_portfolio %}
     {% include archive-single.html %}
   {% endfor %}
 </div>
