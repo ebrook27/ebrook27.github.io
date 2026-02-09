@@ -2,6 +2,7 @@
 title: "Online Temperature Prediction for Additive Manufacturing (EKF)"
 excerpt: "Physics-informed time-series modeling and state estimation for process monitoring."
 collection: portfolio
+order: 2
 ---
 
 ### Overview
