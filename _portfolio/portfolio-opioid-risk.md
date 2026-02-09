@@ -2,6 +2,7 @@
 title: "Opioid Overdose Mortality Modeling, Risk Stratification, and Policy Counterfactuals"
 excerpt: "County-level forecasting, risk identification via predictive instability, and scenario-based policy simulations."
 collection: portfolio
+teaser: /images/mortality_model_error_compare.png
 order: 1
 ---
 
