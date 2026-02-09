@@ -7,14 +7,11 @@ order: 1
 ---
 
 ## Problem Context
-Opioid overdose mortality in the United States exhibits strong geographic persistence, particularly in rural regions such as central Appalachia. While a large body of work has focused on predicting mortality rates using socioeconomic and prescribing data, less attention has been paid to **where and why predictive models systematically fail**—and what those failures reveal about underlying, place-based risk.
+A growing body of work has applied machine learning to understand and forecast opioid overdose mortality in the United States, demonstrating that socioeconomic vulnerability, prescribing practices, and broader structural factors are all predictive of overdose outcomes. Prior studies have shown that while prescription opioids were likely a primary driver earlier in the crisis, particularly in regions such as Appalachia, their explanatory power weakened over time as illicit opioids became increasingly dominant. Importantly, these studies consistently find that structural vulnerability factors, including unemployment, transportation access, and broader socioeconomic conditions, distinguish counties with anomalously high and low mortality.
+At the same time, predictive models exhibit a persistent pattern of systematic error: counties with the highest overdose mortality are repeatedly under-predicted, while low-mortality counties tend to be over-predicted. Rather than treating these residual patterns as noise or model failure, recent work suggests that such predictive instability may point to unmeasured confounders, data limitations, or deeper structural drivers of risk.
 
-This project develops an **end-to-end modeling framework** to:
-
-1. identify counties experiencing *persistent, elevated mortality risk*, and  
-2. evaluate how predicted mortality responds to changes in policy-relevant variables under structured counterfactual scenarios.
-
-Rather than treating prediction error as noise, the framework explicitly **leverages predictive instability as a signal of structural risk**.
+This project builds on prior machine learning and spatiotemporal modeling approaches by reframing predictive error as a signal, rather than a nuisance. Specifically, we interpret a model’s recurrent difficulty in forecasting a county’s mortality trajectory as evidence of underlying, place-based epidemiological risk that is not fully captured by observed covariates alone.
+Building on this risk framework, the project further examines how predicted opioid mortality responds to changes in policy-relevant variables through structured counterfactual simulations. While counterfactual reasoning has been used previously to study overdose mortality dynamics, most notably around major shocks such as the COVID-19 pandemic, this work emphasizes comparative, risk-stratified scenario analysis rather than causal effect estimation. The goal is not to identify causal mechanisms, but to evaluate how model-consistent mortality predictions change under plausible policy perturbations, and how these responses vary across counties with differing levels of persistent risk.
 
 <figure>
   <img
@@ -43,7 +40,7 @@ Together, these data support both predictive modeling and scenario-based analysi
 ---
 
 ## Modeling Framework
-We train machine learning models to predict **next-year county-level opioid overdose mortality** using lagged covariates. Predictions are generated out-of-sample via 5-fold cross-validation, ensuring that every county-year observation is evaluated under held-out conditions.
+We train machine learning models to predict next-year county-level opioid overdose mortality using lagged covariates. Predictions are generated out-of-sample via 5-fold cross-validation, ensuring that every county-year observation is evaluated under held-out conditions.
 
 To verify robustness, we employ multiple model classes:
 
@@ -57,9 +54,9 @@ Across models, we observe a consistent pattern:
 ---
 
 ## Risk as Persistent Predictive Instability
-We define county-level **risk** not as a single-year prediction, but as the **accumulated difficulty models have in forecasting mortality over time**.
+We define county-level risk not as a single-year prediction, but as the accumulated difficulty models have in forecasting mortality over time.
 
-For each county, we compute a cumulative loss-based risk score derived from repeated out-of-sample prediction errors. Counties that are consistently under-predicted—indicating mortality trajectories exceeding what observed covariates would suggest—are interpreted as experiencing **structural epidemiological risk** not fully captured by standard indicators.
+For each county, we compute a cumulative loss-based risk score derived from repeated out-of-sample prediction errors. Counties that are consistently under-predicted, indicating mortality trajectories exceeding what observed covariates would suggest, are interpreted as experiencing structural epidemiological risk not fully captured by standard indicators.
 
 To emphasize recent shocks and evolving dynamics, we extend this definition using an **Exponentially Weighted Moving Average (EWMA)** of prediction errors. The EWMA formulation is particularly effective at highlighting post-2020 mortality spikes and persistent rural hotspots.
 
@@ -72,9 +69,9 @@ Empirically, EWMA-based risk stratification reveals:
 ---
 
 ## Counterfactual Policy Simulations
-Building on the risk framework, we conduct **counterfactual mortality predictions** to evaluate how modeled outcomes respond to changes in policy-relevant variables.
+Building on the risk framework, we conduct counterfactual mortality predictions to evaluate how modeled outcomes respond to changes in policy-relevant variables.
 
-These simulations are **not causal effect estimates**. Instead, they are structured sensitivity analyses that explore how learned mortality relationships respond to controlled perturbations of inputs, holding other covariates fixed.
+These simulations are not causal effect estimates. Instead, they are structured sensitivity analyses that explore how learned mortality relationships respond to controlled perturbations of inputs, holding other covariates fixed.
 
 We examine counterfactual scenarios involving:
 
@@ -82,12 +79,12 @@ We examine counterfactual scenarios involving:
 - changes in unemployment, and
 - changes in insurance coverage.
 
-The magnitude of these interventions is informed by historically observed policy shifts (e.g., post-2016 prescribing guidelines), but the results are interpreted conservatively as **model-consistent responses**, not causal claims.
+The magnitude of these interventions is informed by historically observed policy shifts (e.g., post-2016 prescribing guidelines), but the results are interpreted conservatively as *model-consistent responses, not causal claims.
 
 Crucially, we evaluate counterfactual responses **by risk strata**, revealing that:
 
 - high-risk counties often exhibit different sensitivity profiles than low-risk counties,
-- uniform national interventions can produce heterogeneous—and sometimes counterintuitive—effects across risk groups,
+- uniform national interventions can produce heterogeneous, and sometimes counterintuitive, effects across risk groups,
 - and structural vulnerability continues to shape outcomes even under aggressive supply-side interventions.
 
 <figure>
@@ -121,7 +118,7 @@ This framework reframes opioid mortality modeling in two important ways:
 1. **Risk is defined dynamically**, based on persistent model failure rather than static covariates alone.  
 2. **Policy evaluation is stratified by structural risk**, highlighting where interventions may have limited or uneven impact.
 
-For public health stakeholders—particularly in rural contexts—this approach supports:
+For public health stakeholders, particularly in rural contexts, this approach supports:
 
 - identification of counties experiencing entrenched, place-based risk,
 - comparison of intervention strategies under realistic assumptions,
@@ -141,3 +138,12 @@ This analysis does not claim causal identification, and results should not be in
 ## Code and Reproducibility
 Full code, data pipelines, and model diagnostics are available here:  
 **GitHub:** https://github.com/ebrook27/Opioid_Risk
+
+--- 
+
+## Selected References
+- Deas, J. et al. (2025). *Identifying spatiotemporal patterns and structural drivers of opioid-related mortality using machine learning.*  
+- Böttcher, L. et al. (2024). *Forecasting drug overdose deaths in the United States.*  
+- Schell, T. et al. (2022). *Identifying neighborhood-level predictors of opioid mortality using machine learning.*  
+- Xia, Y. et al. (2023). *Counterfactual analysis of drug overdose mortality during the COVID-19 pandemic.*  
+- Broadbent, A., et al. (2022). *Can machine learning support scientific explanation without causal identific
