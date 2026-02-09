@@ -14,6 +14,17 @@ This project develops an **end-to-end modeling framework** to:
 
 Rather than treating prediction error as noise, the framework explicitly **leverages predictive instability as a signal of structural risk**.
 
+<figure>
+  <img
+    src="/images/mortality_model_error_compare.png"
+    alt="For a given model, areas with low mortality were relatively over-predicted, and regions with high mortality were relatively under-predicted."
+    style="width:85%; height:auto;"
+  >
+  <figcaption>
+    <em>For a given model, areas with low mortality were relatively over-predicted, and regions with high mortality were relatively under-predicted.</em>
+  </figcaption>
+</figure>
+
 ---
 
 ## Data and Scope
@@ -76,6 +87,29 @@ Crucially, we evaluate counterfactual responses **by risk strata**, revealing th
 - high-risk counties often exhibit different sensitivity profiles than low-risk counties,
 - uniform national interventions can produce heterogeneous—and sometimes counterintuitive—effects across risk groups,
 - and structural vulnerability continues to shape outcomes even under aggressive supply-side interventions.
+
+<figure>
+  <img
+    src="/images/mlp_percent_change_rx.png"
+    alt="Percentage change in mean predicted mortality, for a risk-informed RX reduction scenario, using a multi-layer perceptron (MLP) model."
+    style="width:75%; height:auto;"
+  >
+  <figcaption>
+    <em>Percentage change in mean predicted mortality, for a risk-informed RX reduction scenario, using a multi-layer perceptron (MLP) model.</em>
+  </figcaption>
+</figure>
+  
+
+<figure>
+  <img
+    src="/images/mlp_actual_change_rx.png"
+    alt="Actual change in mean predicted mortality, for a risk-informed RX reduction scenario, using a multi-layer perceptron (MLP) model."
+    style="width:75%; height:auto;"
+  >
+  <figcaption>
+    <em>Actual change in mean predicted mortality, for a risk-informed RX reduction scenario, using a multi-layer perceptron (MLP) model.</em>
+  </figcaption>
+</figure>
 
 ---
 
