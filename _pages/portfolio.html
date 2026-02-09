@@ -5,10 +5,13 @@ permalink: /portfolio/
 author_profile: true
 ---
 
+<p>
+A selection of projects focused on applied machine learning, time-series modelling, and decision-oriented analysis. Each entry links to code and includes a concise summary of the problem, data, approach, and results.
+</p>
 {% include base_path %}
 
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
+<div class="entries-list">
+  {% for post in site.portfolio %}
+    {% include archive-single.html %}
+  {% endfor %}
+</div>
