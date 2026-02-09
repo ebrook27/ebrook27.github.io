@@ -9,56 +9,60 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Education
+**Ph.D. in Mathematics**  
+University of Tennessee, Knoxville — *Expected 2026*  
+Dissertation: *Opioid overdose mortality risk quantification and counterfactual policy simulation* (working title)
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+**B.S. in Mathematics**  
+Birmingham–Southern College, 2018
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+**B.S. in Physics**  
+Birmingham–Southern College, 2018
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+---
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Research & Applied Projects
+**Opioid Overdose Mortality Modeling and Policy Counterfactuals**  
+- Developed end-to-end county-level modeling pipelines for opioid overdose mortality forecasting and risk stratification  
+- Introduced a model-based risk framework leveraging persistent predictive instability  
+- Designed counterfactual simulation workflows to evaluate policy-relevant interventions (prescribing, insurance coverage, unemployment)  
+- Integrated multi-source longitudinal data (SVI, mortality, prescriptions, unemployment, insurance) with reproducible ETL pipelines  
+
+**Physics-Informed Time-Series Modeling for Additive Manufacturing**  
+- Built nonlinear state-space models for online temperature prediction in Additive Friction Stir Deposition  
+- Implemented Extended Kalman Filter (EKF)–based state estimation under noisy measurements  
+- Conducted diagnostics on bias, stability, and regime-dependent model mismatch  
+
+---
+
+## Publications
+**Saturn’s Multiple, Variable Periodicities: A Dual-Flywheel Model of Thermosphere–Ionosphere–Magnetosphere Coupling**  
+*Journal of Geophysical Research: Space Physics*  
+https://doi.org/10.1029/2019JA026870
+
+---
+
+## Technical Skills
+**Strong:** Python, R, LaTeX, Git  
+**Working knowledge:** SQL  
+**Familiar:** Bash  
+
+---
+
+## Teaching & Communication
+University of Tennessee, Knoxville  
+Instructor of Record:  
+- **Finite Mathematics** — 3 semesters  
+- **Statistical Reasoning** — 1 academic year  
+
+Consistently received strong student evaluations, with emphasis on clarity, interpretation, and communication of quantitative concepts to non-technical audiences.
+
+---
+
+## Talks & Presentations
+<ul>
+{% for post in site.talks reversed %}
+  {% include archive-single-talk-cv.html %}
+{% endfor %}
+</ul>
