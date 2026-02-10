@@ -50,11 +50,14 @@ https://doi.org/10.1029/2019JA026870
 
 ---
 
-## Teaching & Communication
-University of Tennessee, Knoxville  
-Instructor of Record:  
-- **Finite Mathematics** — 3 semesters  
-- **Statistical Reasoning** — 1 academic year  
+## Teaching - University of Tennessee, Knoxville  
+**Instructor of Record**: Finite Mathematics (3 semesters), Statistical Reasoning (2 semesters)  
+
+- Delivered full-course instruction for introductory quantitative courses, emphasizing interpretation and real-world application.
+- Designed exams and assignments to assess applied quantitative reasoning.
+- Provided individualized support through office hours and written feedback.
+- Managed grading, accommodations, and course logistics with consistency and transparency.
+
 
 Consistently received strong student evaluations, with emphasis on clarity, interpretation, and communication of quantitative concepts to non-technical audiences.
 
