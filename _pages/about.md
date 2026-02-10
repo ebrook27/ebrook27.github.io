@@ -10,12 +10,12 @@ I’m **Eli Brooks**, a PhD candidate focused on **applied data science and mach
 
 I build end-to-end modeling workflows for the opioid crisis, spanning data acquisition and ETL, county-level forecasting and risk modeling, evaluation and diagnostics, and scenario-based analyses that translate model output into actionable insights.
 
-### What I work on
+**Research Interests**:
 - **Public health analytics:** county-level modeling of opioid overdose mortality, longitudinal risk stratification, and counterfactual policy simulations targeting prescribing practices and social determinants of health.
   
 - **Advanced manufacturing analytics:** time-series and state-space modeling (e.g., EKF-style approaches) for real-time temperature prediction and process monitoring in additive manufacturing.
 
-### What you’ll find here
+**Site pages**:  
 - **Projects:** case-study style writeups linking to code, results, and technical notes.
 - **Talks:** selected presentations and talks.
 - **CV:** A brief overview of my education, talks, and experience
